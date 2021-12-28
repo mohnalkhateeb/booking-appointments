@@ -1,3 +1,8 @@
+# Booking Appointments
+##### Any user who does not have the authorization will enter the application as a buyer and can view and search for sellers 
+##### The seller must enter using the authorization This authorization was created using auth0
+##### After the seller enters the application, he will see all the appointments that you have requested for reservations with him, and he can confirm or ignore them
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
