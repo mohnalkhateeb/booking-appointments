@@ -68,12 +68,12 @@ class Home extends React.Component {
   }
   render() {
     return (
-      <>
+      <div>
         <SearchForm string="search for seller" searchItems={this.searchItems} />
         <h1>Our Sellers</h1>
         {this.state.allSellers.map((seller, idx) => {
           return (
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '18rem' , display : 'inline-block'},{ marginLeft : '5%'}}>
               {/* <Card.Img variant="top" src={fllower.photo} /> */}
               <Card.Body>
                 <Card.Title>{seller.name}</Card.Title>
@@ -87,7 +87,7 @@ class Home extends React.Component {
         }
         )}
         <BookAppoint addAppoint={this.bookAppoint} displayModal={this.state.displayAddModal} hideModal={this.hideModal} />
-      </>
+      </div>
     )
   }
 }

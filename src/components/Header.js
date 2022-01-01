@@ -13,8 +13,8 @@ class Header extends React.Component {
     return(
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand>Booking Appointment</Navbar.Brand>
-        <Link to="/">Our-Sellers ___</Link>
-        <Link to="/SellerAppoint"> ___your-Appointments</Link>
+        <Link style ={{marginInline : '2%'}} to="/">Our-Sellers</Link>
+        <Link style ={{marginInline : '2%'}}to="/SellerAppoint"> your-Appointments</Link>
         {isAuthenticated ? <LogoutButton /> : <LoginButton />}
       </Navbar>
     );

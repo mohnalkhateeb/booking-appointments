@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 import { withAuth0 } from '@auth0/auth0-react';
 import MyAppointments from './components/MyAppointments';
-
+import './App.css'
 
 class App extends React.Component {
 
