@@ -19,7 +19,7 @@ class BookAppoint extends React.Component {
             <Modal.Body>
             <form onSubmit={this.props.addAppoint}>
                 <input placeholder='Enter your name' type="text" name='buyername' /><br/><br/>
-                <input placeholder='Email: abc@gmail.com' type="text" name='buyeremail' /><br/><br/>
+                {/* <input placeholder='Email: abc@gmail.com' type="text" name='buyeremail' /><br/><br/> */}
                 <input placeholder='1/1/2022' type="text" name='date' /><br/><br/>
                 <input placeholder='1:00 PM' type="text" name='time' /><br/><br/>
                 <input type="submit" value="Book Appointment" />

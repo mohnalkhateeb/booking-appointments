@@ -8,7 +8,7 @@ class Login extends React.Component {
     return(
       <Card style={{ width: '18rem' },{marginLeft : '40%'}}>
         <Card.Body>
-          <Card.Title>Seller Log In</Card.Title>
+          <Card.Title> Log In</Card.Title>
           <Card.Text>
             Click Below to Log In
           </Card.Text>

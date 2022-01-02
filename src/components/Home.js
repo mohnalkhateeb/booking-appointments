@@ -12,7 +12,8 @@ class Home extends React.Component {
       allSellers: [],
       server: 'http://localhost:3003',
       displayAddModal: false,
-      index : 0
+      index : 0 ,
+      email : ''
     }
   }
   componentDidMount = async () => {
@@ -52,23 +53,35 @@ class Home extends React.Component {
 
   bookAppoint = async (event) => {
     event.preventDefault();
-    let addObj = {
+    let addToSellerObj = {
       email: this.state.allSellers[this.state.index].email,
       buyername: event.target.buyername.value,
-      buyeremail: event.target.buyeremail.value,
+      buyeremail: this.props.auth0.user.email,
       date: event.target.date.value,
       time : event.target.time.value,
       aproval : false
       
 
     }
-    console.log(addObj);
-    await axios.post(`${this.state.server}/addappoint`, addObj)
+    let addToBuyerObj = {
+      email: this.props.auth0.user.email,
+      buyername: this.state.allSellers[this.state.index].name,
+      buyeremail: this.state.allSellers[this.state.index].email,
+      date: event.target.date.value,
+      time : event.target.time.value,
+      aproval : false
+    }
+    console.log(addToSellerObj);
+    await axios.post(`${this.state.server}/addappoint`, addToSellerObj)
+    console.log(addToBuyerObj);
+    await axios.post(`${this.state.server}/addappoint`, addToBuyerObj)
+
     this.hideModal()
   }
   render() {
     return (
       <div>
+        <h1>Hello {this.props.auth0.user.name}</h1>
         <SearchForm string="search for seller" searchItems={this.searchItems} />
         <h1>Our Sellers</h1>
         {this.state.allSellers.map((seller, idx) => {
